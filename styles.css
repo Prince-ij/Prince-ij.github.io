@@ -52,6 +52,47 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Semantic HTML Enhancement */
+main {
+    min-height: 100vh;
+}
+
+article {
+    position: relative;
+}
+
+/* Section Subtitle Enhancement */
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+/* Title Subtitle Enhancement */
+.title-subtitle {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0.5rem;
+}
+
+/* Strong and Em Enhancement */
+strong {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+em {
+    color: var(--secondary);
+    font-style: normal;
+    font-weight: 500;
+}
+
 /* Page Loader */
 .page-loader {
     position: fixed;
@@ -1990,5 +2031,53 @@ footer {
     .container {
         max-width: none;
         padding: 0;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.footer-content p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .footer-content p {
+        font-size: 0.8rem;
+        line-height: 1.5;
     }
 }
