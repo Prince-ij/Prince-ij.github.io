@@ -708,105 +708,11 @@ function initEmailHandler() {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         initPerformanceOptimizations();
-        initImageSliders();
         // initParticleBackground(); // Uncomment for particle effect
         // initThemeToggle(); // Uncomment for theme toggle
     });
 } else {
     initPerformanceOptimizations();
-    initImageSliders();
     // initParticleBackground();
     // initThemeToggle();
-}
-
-// Image Slider Functionality
-function initImageSliders() {
-    class ImageSlider {
-        constructor(container) {
-            this.container = container;
-            this.slider = container.querySelector('.image-slider');
-            this.slides = container.querySelectorAll('.slide');
-            this.dots = container.querySelectorAll('.dot');
-            this.prevBtn = container.querySelector('.prev');
-            this.nextBtn = container.querySelector('.next');
-
-            this.currentSlide = 0;
-            this.slideCount = this.slides.length;
-            this.autoSlideInterval = null;
-
-            this.init();
-        }
-
-        init() {
-            if (this.slideCount <= 1) return;
-
-            // Set up event listeners
-            this.prevBtn?.addEventListener('click', () => this.prevSlide());
-            this.nextBtn?.addEventListener('click', () => this.nextSlide());
-
-            this.dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => this.goToSlide(index));
-            });
-
-            // Pause auto-slide on hover
-            this.container.addEventListener('mouseenter', () => this.pauseAutoSlide());
-            this.container.addEventListener('mouseleave', () => this.startAutoSlide());
-
-            // Initialize first slide
-            this.updateSlider();
-            this.startAutoSlide();
-        }
-
-        goToSlide(index) {
-            this.currentSlide = index;
-            this.updateSlider();
-        }
-
-        nextSlide() {
-            this.currentSlide = (this.currentSlide + 1) % this.slideCount;
-            this.updateSlider();
-        }
-
-        prevSlide() {
-            this.currentSlide = (this.currentSlide - 1 + this.slideCount) % this.slideCount;
-            this.updateSlider();
-        }
-
-        updateSlider() {
-            // Update slider position
-            const translateX = -this.currentSlide * 100;
-            this.slider.style.transform = `translateX(${translateX}%)`;
-
-            // Update dots
-            this.dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === this.currentSlide);
-            });
-
-            // Update slides
-            this.slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === this.currentSlide);
-            });
-        }
-
-        startAutoSlide() {
-            if (this.slideCount <= 1) return;
-
-            this.autoSlideInterval = setInterval(() => {
-                this.nextSlide();
-            }, 4000); // Change slide every 4 seconds
-        }
-
-        pauseAutoSlide() {
-            if (this.autoSlideInterval) {
-                clearInterval(this.autoSlideInterval);
-                this.autoSlideInterval = null;
-            }
-        }
-    }
-
-    // Initialize all sliders
-    const sliderContainers = document.querySelectorAll('.slider-container');
-    sliderContainers.forEach(container => {
-        new ImageSlider(container);
-    });
 }
