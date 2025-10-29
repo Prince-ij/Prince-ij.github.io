@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://prince-ij.github.io/sitemap.xml
+Sitemap: https://www.ibrahimaminu.me/sitemap.xml
 
 # Block access to sensitive files
 Disallow: /*.js$
