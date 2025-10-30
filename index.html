@@ -311,8 +311,23 @@
 
       /* Navigation */
       .navbar {
-        padding: 1.5rem 0;
+        padding: 1rem 0;
         transition: all 0.3s ease;
+      }
+
+      /* Ensure container doesn't cause overflow */
+      .container {
+        max-width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      /* Ensure no horizontal overflow */
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
       }
 
       .navbar-scrolled {
@@ -1144,7 +1159,7 @@
       }
     </style>
   </head>
-  <body>
+  <body class>
     <!-- Page Loader -->
     <div id="page-loader" class="page-loader">
       <div class="loader-content">
@@ -1219,8 +1234,9 @@
               Hi, I'm <span class="highlight">Ibrahim Aminu</span>
             </h1>
             <p class="hero-description">
-              I am a versatile Fullstack Engineer with expertise in crafting
-              secure, modern, fast and reliable software solutions.
+              Fullstack Engineer specializing in React, Node.js, and Python
+              development. I architect and build secure, scalable web
+              applications with optimized performance and modern UX.
             </p>
             <div class="hero-btns">
               <a href="#services" class="btn btn-primary me-3 mb-3">
@@ -1236,17 +1252,7 @@
             data-aos="fade-left"
             data-aos-duration="1000"
             data-aos-delay="200"
-          >
-            <div class="hero-image text-center">
-              <!-- You can add a hero image here if needed -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Scroll Indicator -->
-      <div class="scroll-indicator">
-        <div class="scroll-arrow">
-          <i class="fas fa-chevron-down"></i>
+          ></div>
         </div>
       </div>
     </section>
@@ -1255,7 +1261,7 @@
     <section id="about" class="about">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Who Am I?</h2>
+          <h2>About Me</h2>
         </div>
         <div class="row align-items-center">
           <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
@@ -1272,23 +1278,27 @@
           <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
             <div class="about-text">
               <p>
-                I am Ibrahim Aminu, also known as <em>Prince Ij</em> - a
-                Fullstack Engineer with expertise in modern web technologies.
+                I'm Ibrahim Aminu, also known as
+                <em style="color: #1747e3">Prince Ij</em>, a Fullstack Engineer
+                with deep expertise in modern web technologies and software
+                architecture.
               </p>
               <p>
-                Software Engineers don't just write code; we build the systems
-                that power the world. This realization drove me to continuously
-                expand my knowledge and skillset, transforming from a curious
-                beginner into a professional developer capable of creating
-                <strong>scalable, robust solutions</strong> using technologies
-                like React.js, Express.js, Python, MongoDB, and JavaScript.
+                I believe software engineering extends far beyond writing code,
+                we architect the systems that power our digital world. This
+                philosophy has driven my continuous growth from a curious
+                beginner to a professional developer capable of delivering
+                <strong>scalable, enterprise-grade solutions</strong> using
+                cutting-edge technologies including React.js, Node.js,
+                Express.js, Python, and MongoDB.
               </p>
 
               <h3>Education</h3>
               <p>
-                Currently in my final year studying Computer Science at Ahmadu
-                Bello University Zaria, one of Nigeria's most prestigious
-                institutions.
+                Currently completing my final year in Computer Science at Ahmadu
+                Bello University Zaria, one of Nigeria's premier academic
+                institutions, where I'm building a strong foundation in computer
+                science principles and software engineering best practices.
               </p>
             </div>
           </div>
@@ -1316,9 +1326,9 @@
               <ul class="skill-list">
                 <li>Python</li>
                 <li>JavaScript (ES6+)</li>
-                <li>TypeScript</li>
-                <li>SQL</li>
-                <li>MongoDB</li>
+                <li>Java</li>
+                <li>C</li>
+                <li>Bash</li>
               </ul>
             </div>
           </div>
@@ -1360,7 +1370,6 @@
                 <li>Django</li>
                 <li>RESTful API Design</li>
                 <li>GraphQL</li>
-                <li>Authentication & Authorization</li>
               </ul>
             </div>
           </div>
@@ -1398,7 +1407,7 @@
                 <li>Docker</li>
                 <li>VS Code</li>
                 <li>Postman</li>
-                <li>Render / GitHub Pages</li>
+                <li>Cloud Deployment</li>
               </ul>
             </div>
           </div>
@@ -1413,11 +1422,12 @@
               </div>
               <h3>Software Engineering Concepts</h3>
               <ul class="skill-list">
-                <li>Client–Server Architecture</li>
+                <li>Client-Server Architecture</li>
                 <li>Data Structures & Algorithms</li>
-                <li>Testing & Debugging</li>
-                <li>Version Control Workflow</li>
+                <li>Testing & Debugging Methodologies</li>
+                <li>Version Control & Git Workflow</li>
                 <li>Performance Optimization</li>
+                <li>System Design Patterns</li>
               </ul>
             </div>
           </div>
@@ -1511,9 +1521,9 @@
               <div class="project-content">
                 <h3>Typing Trainer Pro</h3>
                 <p>
-                  A desktop application built with Python Tkinter to test and
-                  improve typing speed with real-time WPM tracking and
-                  performance analytics.
+                  Interactive desktop application that helps users master typing
+                  through real-time performance tracking, WPM analytics, and
+                  progressive training exercises—all built with Python Tkinter.
                 </p>
                 <div class="tech-stack">
                   <span class="tech">Python</span>
@@ -1542,9 +1552,10 @@
               <div class="project-content">
                 <h3>HangSpot</h3>
                 <p>
-                  A social web application where users can discover and share
-                  reliable WiFi spots and hangout places. Features
-                  authentication, user posts, and location sharing.
+                  A simple social app that helps users share their favorite
+                  WiFi-enabled spots and hangout locations. Features user
+                  accounts, post creation, and community discovery in a clean,
+                  intuitive interface.
                 </p>
                 <div class="tech-stack">
                   <span class="tech">Flask</span>
@@ -1574,9 +1585,10 @@
               <div class="project-content">
                 <h3>TaskLight</h3>
                 <p>
-                  A lightweight task management system with project
-                  organization, user authentication, and intuitive dashboard for
-                  tracking project progress and tasks.
+                  Efficient task management platform designed to simplify
+                  project organization and progress tracking. Features secure
+                  authentication and a user-friendly dashboard for seamless task
+                  management.
                 </p>
                 <div class="tech-stack">
                   <span class="tech">Flask</span>
@@ -1822,7 +1834,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
+    <a href="#home" class="back-to-top">
       <i class="fas fa-chevron-up"></i>
     </a>
 
